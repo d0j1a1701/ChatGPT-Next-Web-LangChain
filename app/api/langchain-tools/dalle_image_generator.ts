@@ -41,16 +41,28 @@ export class DallEAPIWrapper extends StructuredTool {
     prompt: z
       .string()
       .describe(
-        'input must be a english prompt. you can set `quality: "hd"` for enhanced detail.',
+        'input must be a english prompt.',
       ),
     size: z
       .enum(["1024x1024", "1024x1792", "1792x1024"])
       .default("1024x1024")
       .describe("images size"),
+    quality: z
+      .enum(["standard", "hd"])
+      .default("standard")
+      .describe(
+        'hd creates images with finer details and greater consistency across the image, but with higher cost.',
+      ),
+    style: z
+      .enum(["vivid", "natural"])
+      .default("vivid")
+      .describe(
+        'vivid causes the model to lean towards generating hyper-real and dramatic images. natural causes the model to produce more natural, less hyper-real looking images.',
+      ),
   });
 
   /** @ignore */
-  async _call({ prompt, size }: z.infer<typeof this.schema>) {
+  async _call({ prompt, size, quality, style }: z.infer<typeof this.schema>) {
     let imageUrl;
     const apiUrl = `${this.baseURL}/images/generations`;
     try {
@@ -65,6 +77,8 @@ export class DallEAPIWrapper extends StructuredTool {
           prompt: prompt,
           n: this.n,
           size: size,
+          quality: quality,
+          style: style
         }),
       };
       console.log(requestOptions);
