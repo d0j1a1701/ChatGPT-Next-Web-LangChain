@@ -41,7 +41,7 @@ export class DallEAPIWrapper extends StructuredTool {
     prompt: z
       .string()
       .describe(
-        'input must be a english prompt.',
+        "A text description of the desired image(s). input must be a english prompt.",
       ),
     size: z
       .enum(["1024x1024", "1024x1792", "1792x1024"])
@@ -51,13 +51,13 @@ export class DallEAPIWrapper extends StructuredTool {
       .enum(["standard", "hd"])
       .default("standard")
       .describe(
-        'hd increases image detail and clarity at the cost of doubled consumption, and should not be used unless specified by the user.',
+        "hd increases image detail and clarity at the cost of doubled consumption, and should not be used unless specified by the user.",
       ),
     style: z
       .enum(["vivid", "natural"])
       .default("vivid")
       .describe(
-        'vivid leads to the creation of more intense and dramatic images, while Natural results in images that look more realistic and less exaggerated.',
+        "vivid leads to the creation of more intense and dramatic images, while Natural results in images that look more realistic and less exaggerated.",
       ),
   });
 
@@ -78,23 +78,23 @@ export class DallEAPIWrapper extends StructuredTool {
           n: this.n,
           size: size,
           quality: quality,
-          style: style
+          style: style,
         }),
       };
       if (this.model != "dall-e-3") {
-          requestOptions = {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-              Authorization: `Bearer ${this.apiKey}`,
-            },
-            body: JSON.stringify({
-              model: this.model,
-              prompt: prompt,
-              n: this.n,
-              size: size,
-            }),
-          };
+        requestOptions = {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${this.apiKey}`,
+          },
+          body: JSON.stringify({
+            model: this.model,
+            prompt: prompt,
+            n: this.n,
+            size: size,
+          }),
+        };
       }
       console.log(requestOptions);
       const response = await fetch(apiUrl, requestOptions);
@@ -127,5 +127,5 @@ export class DallEAPIWrapper extends StructuredTool {
     }
   }
 
-  description = `openai's dall-e 3 image generator.`;
+  description = `openai's dall-e image generator.`;
 }
