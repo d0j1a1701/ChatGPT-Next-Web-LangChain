@@ -8,12 +8,9 @@ export const FETCH_COMMIT_URL = `https://api.github.com/repos/${OWNER}/${REPO}/c
 export const FETCH_TAG_URL = `https://api.github.com/repos/${OWNER}/${REPO}/tags?per_page=1`;
 export const RUNTIME_CONFIG_DOM = "danger-runtime-config";
 
-export const DEFAULT_CORS_HOST = "https://a.nextweb.fun";
-export const DEFAULT_API_HOST = `${DEFAULT_CORS_HOST}/api/proxy`;
+export const DEFAULT_API_HOST = "https://api.nextchat.dev";
 export const OPENAI_BASE_URL = "https://api.openai.com";
 export const GOOGLE_BASE_URL = "https://generativelanguage.googleapis.com";
-
-export const GEMINI_BASE_URL = "https://generativelanguage.googleapis.com/";
 
 export enum Path {
   Home = "/",
@@ -94,7 +91,7 @@ export const Azure = {
 
 export const Google = {
   ExampleEndpoint: "https://generativelanguage.googleapis.com/",
-  ChatPath: "v1beta/models/gemini-pro:generateContent",
+  ChatPath: "v1beta/models/{{model}}:generateContent",
 };
 
 export const DEFAULT_INPUT_TEMPLATE = `{{input}}`; // input / time / model / lang
@@ -108,6 +105,7 @@ Latex block: $$e=mc^2$$
 `;
 
 export const SUMMARIZE_MODEL = "gpt-3.5-turbo";
+export const GOOGLE_SUMMARIZE_MODEL = "gemini-pro";
 
 export const KnowledgeCutOffDate: Record<string, string> = {
   default: "2021-09",
@@ -249,6 +247,15 @@ export const DEFAULT_MODELS = [
   },
   {
     name: "gemini-pro",
+    available: true,
+    provider: {
+      id: "google",
+      providerName: "Google",
+      providerType: "google",
+    },
+  },
+  {
+    name: "gemini-pro-vision",
     available: true,
     provider: {
       id: "google",
