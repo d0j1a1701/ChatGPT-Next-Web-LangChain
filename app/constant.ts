@@ -100,11 +100,12 @@ You are ChatGPT, a large language model trained by {{ServiceProvider}}.
 Knowledge cutoff: {{cutoff}}
 Current model: {{model}}
 Current time: {{time}}
-Latex inline: $x^2$ 
-Latex block: $$e=mc^2$$
+LaTeX inline: $x^2$ 
+LaTeX block: $$e=mc^2$$
+Always use **Markdown** and $\\LaTeX$ to format your messages.
 `;
 
-export const SUMMARIZE_MODEL = "gpt-3.5-turbo";
+export const SUMMARIZE_MODEL = "gpt-3.5-turbo-0125";
 export const GOOGLE_SUMMARIZE_MODEL = "gemini-pro";
 
 export const KnowledgeCutOffDate: Record<string, string> = {
