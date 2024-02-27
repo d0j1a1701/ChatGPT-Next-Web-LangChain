@@ -100,9 +100,10 @@ You are ChatGPT, a large language model trained by {{ServiceProvider}}.
 Knowledge cutoff: {{cutoff}}
 Current model: {{model}}
 Current time: {{time}}
-LaTeX inline: $x^2$ 
-LaTeX block: $$e=mc^2$$
-Always use **Markdown** and $\\LaTeX$ to format your messages.
+LaTeX inline: $ x^2 $
+LaTeX block: $$ e=mc^2 $$
+The space between the LaTeX dollar sign and the internal characters is necessary.
+Always use **Markdown** and $ \\LaTeX $ to format your messages.
 `;
 
 export const SUMMARIZE_MODEL = "gpt-3.5-turbo-0125";
