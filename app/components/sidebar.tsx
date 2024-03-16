@@ -174,7 +174,7 @@ export function SideBar(props: { className?: string }) {
     >
       <div className={styles["sidebar-header"]} data-tauri-drag-region>
         <div className={styles["sidebar-title"]} data-tauri-drag-region>
-          Echo
+          ChatGPT Mirror
         </div>
         <div className={styles["sidebar-sub-title"]}>
           d0j1a_1701 的私有 ChatGPT 镜像。

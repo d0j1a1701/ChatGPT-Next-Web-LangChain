@@ -10,7 +10,7 @@ import { GoogleTagManager } from "@next/third-parties/google";
 const serverConfig = getServerSideConfig();
 
 export const metadata: Metadata = {
-  title: "Echo",
+  title: "ChatGPT Mirror",
   description: "d0j1a_1701 的私有 ChatGPT 镜像。",
   viewport: {
     width: "device-width",
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     { media: "(prefers-color-scheme: dark)", color: "#1b262a" },
   ],
   appleWebApp: {
-    title: "Echo",
+    title: "ChatGPT Mirror",
     statusBarStyle: "default",
   },
 };

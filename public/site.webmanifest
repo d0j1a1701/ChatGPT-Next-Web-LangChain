@@ -1,6 +1,6 @@
 {
-  "name": "Echo",
-  "short_name": "Echo",
+  "name": "ChatGPT Mirror",
+  "short_name": "ChatGPT Mirror",
   "icons": [
     {
       "src": "/android-chrome-192x192.png",
