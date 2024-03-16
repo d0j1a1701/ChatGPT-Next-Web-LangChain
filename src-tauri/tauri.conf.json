@@ -9,7 +9,7 @@
   },
   "package": {
     "productName": "Echo",
-    "version": "2.10.3"
+    "version": "2.11.2"
   },
   "tauri": {
     "allowlist": {
