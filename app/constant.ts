@@ -127,7 +127,7 @@ The space between the LaTeX dollar sign and the internal characters is necessary
 Always use **Markdown** and $ \\LaTeX $ to format your messages.
 `;
 
-export const SUMMARIZE_MODEL = "gpt-3.5-turbo-0125";
+export const SUMMARIZE_MODEL = "gpt-4o";
 export const GEMINI_SUMMARIZE_MODEL = "gemini-pro";
 
 export const KnowledgeCutOffDate: Record<string, string> = {
@@ -140,6 +140,7 @@ export const KnowledgeCutOffDate: Record<string, string> = {
   // it's now easier to add "KnowledgeCutOffDate" instead of stupid hardcoding it, as was done previously.
   "gemini-pro": "2023-12",
   "gemini-pro-vision": "2023-12",
+  "gpt-4o": "2023-10"
 };
 
 export const DEFAULT_TTS_MODEL = "tts-1";
@@ -169,6 +170,8 @@ const openaiModels = [
   "gpt-4-turbo-preview",
   "gpt-4-vision-preview",
   "gpt-4-turbo-2024-04-09",
+  "gpt-4o",
+  "gpt-4o-2024-05-13"
 ];
 
 const googleModels = [
